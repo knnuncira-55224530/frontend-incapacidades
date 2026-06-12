@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-<thead>
-  <tr id="employeeHeader">
-    <th>cargando...</th>
-  </tr>
-</thead>
-<tbody id="employeeTable"></tbody>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empleados</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
 <body>
   <main class="container">
     <h1>Gestión de Empleados</h1>
-
     <button onclick="window.location.href='dashboard.html'">Volver</button>
 
     <section>
       <h2>Nuevo empleado</h2>
-      <form id="employeeForm">
-        <input type="hidden" id="employeeId">
+      <form id="empleadoForm">
+        <input type="hidden" id="empleadoId">
 
         <label>Nombres</label>
         <input type="text" id="nombres" required>
@@ -50,14 +49,27 @@
         <button type="submit">Guardar</button>
       </form>
 
-      <p id="employeeMessage"></p>
+      <p id="empleadoMessage"></p>
+    </section>
+
+    <section>
+      <h2>Filtros</h2>
+      <input type="text" id="filtroDocumento" placeholder="Buscar por documento">
+      <input type="text" id="filtroArea" placeholder="Buscar por área">
+      <select id="filtroEstado">
+        <option value="">Todos</option>
+        <option value="activo">Activo</option>
+        <option value="inactivo">Inactivo</option>
+      </select>
+      <button id="btnFiltrar" type="button">Filtrar</button>
+      <button id="btnLimpiar" type="button">Limpiar</button>
     </section>
 
     <section>
       <h2>Listado</h2>
       <table border="1" width="100%">
         <thead>
-            <tr>
+          <tr>
             <th>ID</th>
             <th>Nombres</th>
             <th>Apellidos</th>
@@ -66,13 +78,13 @@
             <th>Teléfono</th>
             <th>Cargo</th>
             <th>Área</th>
-            <th>Fecha ingreso</th>
+            <th>Ingreso</th>
             <th>Estado</th>
             <th>Acciones</th>
-            </tr>
+          </tr>
         </thead>
-        <tbody id="employeeTable"></tbody>
-     </table>
+        <tbody id="empleadoTable"></tbody>
+      </table>
     </section>
   </main>
 
