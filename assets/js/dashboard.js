@@ -1,26 +1,28 @@
 const token = localStorage.getItem('token');
-const userInfo = document.getElementById('userInfo');
-const logoutBtn = document.getElementById('logoutBtn');
+const user = JSON.parse(localStorage.getItem('user') || 'null');
 
 if (!token) {
   window.location.href = 'login.html';
 }
 
-const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
-userInfo.textContent = `Bienvenido ${usuario.nombre || ''} - Rol: ${usuario.rol || ''}`;
+const userInfo = document.getElementById('userInfo');
+const logoutBtn = document.getElementById('logoutBtn');
 
-logoutBtn.addEventListener('click', async () => {
+if (userInfo && user) {
+  userInfo.textContent = `Sesión activa: ${user.nombre || user.usuario || user.email || 'Usuario'}`;
+}
+
+logoutBtn?.addEventListener('click', async () => {
   try {
     await fetch(`${API_AUTH}/logout`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ token })
+        Authorization: `Bearer ${token}`
+      }
     });
-  } catch (error) {}
+  } catch (e) {}
 
   localStorage.removeItem('token');
-  localStorage.removeItem('usuario');
+  localStorage.removeItem('user');
   window.location.href = 'login.html';
 });

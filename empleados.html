@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<thead>
+  <tr id="employeeHeader">
+    <th>cargando...</th>
+  </tr>
+</thead>
+<tbody id="employeeTable"></tbody>
+<body>
+  <main class="container">
+    <h1>Gestión de Empleados</h1>
+
+    <button onclick="window.location.href='dashboard.html'">Volver</button>
+
+    <section>
+      <h2>Nuevo empleado</h2>
+      <form id="employeeForm">
+        <input type="hidden" id="employeeId">
+
+        <label>Nombres</label>
+        <input type="text" id="nombres" required>
+
+        <label>Apellidos</label>
+        <input type="text" id="apellidos" required>
+
+        <label>Documento</label>
+        <input type="text" id="documento" required>
+
+        <label>Correo</label>
+        <input type="email" id="correo" required>
+
+        <label>Teléfono</label>
+        <input type="text" id="telefono" required>
+
+        <label>Cargo</label>
+        <input type="text" id="cargo" required>
+
+        <label>Área</label>
+        <input type="text" id="area" required>
+
+        <label>Fecha ingreso</label>
+        <input type="date" id="fecha_ingreso" required>
+
+        <label>Estado</label>
+        <select id="estado">
+          <option value="activo">Activo</option>
+          <option value="inactivo">Inactivo</option>
+        </select>
+
+        <button type="submit">Guardar</button>
+      </form>
+
+      <p id="employeeMessage"></p>
+    </section>
+
+    <section>
+      <h2>Listado</h2>
+      <table border="1" width="100%">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Documento</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Cargo</th>
+            <th>Área</th>
+            <th>Fecha ingreso</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTable"></tbody>
+     </table>
+    </section>
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/empleados.js"></script>
+</body>
+</html>

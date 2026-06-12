@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguimiento</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Gestión de Seguimiento</h1>
+
+    <button onclick="window.location.href='dashboard.html'">Volver</button>
+
+    <section>
+      <h2>Nuevo seguimiento</h2>
+      <form id="seguimientoForm">
+        <input type="hidden" id="seguimientoId">
+
+        <label>ID incapacidad</label>
+        <input type="number" id="incapacidad_id" required>
+
+        <label>Fecha</label>
+        <input type="date" id="fecha" required>
+
+        <label>Comentario</label>
+        <textarea id="comentario" required></textarea>
+
+        <label>Estado</label>
+        <select id="estado" required>
+          <option value="registrada">Registrada</option>
+          <option value="en_revision">En revisión</option>
+          <option value="aprobada">Aprobada</option>
+          <option value="rechazada">Rechazada</option>
+          <option value="finalizada">Finalizada</option>
+        </select>
+
+        <label>Usuario responsable</label>
+        <input type="text" id="usuario_responsable" required>
+
+        <button type="submit">Guardar</button>
+      </form>
+
+      <p id="seguimientoMessage"></p>
+    </section>
+
+    <section>
+      <h2>Listado</h2>
+      <table border="1" width="100%">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Incapacidad ID</th>
+            <th>Fecha</th>
+            <th>Comentario</th>
+            <th>Estado</th>
+            <th>Usuario responsable</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="seguimientoTable"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/seguimiento.js"></script>
+</body>
+</html>

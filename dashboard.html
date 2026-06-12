@@ -8,16 +8,42 @@
 </head>
 <body>
   <main class="container">
-    <h1>Dashboard</h1>
-    <p id="userInfo"></p>
+    <header class="topbar">
+      <div>
+        <h1>Sistema de Incapacidades</h1>
+        <p id="userInfo"></p>
+      </div>
+      <button id="logoutBtn">Cerrar sesión</button>
+    </header>
 
-    <nav>
-      <a href="empleados.html">Empleados</a>
-      <a href="incapacidades.html">Incapacidades</a>
-      <a href="seguimiento.html">Seguimiento</a>
-    </nav>
+    <section class="cards">
+      <article class="card">
+        <h2>Empleados</h2>
+        <p>Gestiona registros, estados y búsqueda.</p>
+        <button onclick="window.location.href='empleados.html'">Abrir</button>
+      </article>
 
-    <button id="logoutBtn">Cerrar sesión</button>
+      <article class="card">
+        <h2>Incapacidades</h2>
+        <p>Registra, consulta, edita y finaliza incapacidades.</p>
+        <button onclick="window.location.href='incapacidades.html'">Abrir</button>
+      </article>
+
+      <article class="card">
+        <h2>Seguimiento</h2>
+        <p>Administra trazabilidad y cambios de estado.</p>
+        <button onclick="window.location.href='seguimiento.html'">Abrir</button>
+      </article>
+    </section>
+
+    <section class="summary">
+      <h2>Accesos rápidos</h2>
+      <ul>
+        <li>Consultar empleados activos e inactivos.</li>
+        <li>Consultar incapacidades por empleado, fecha, estado y tipo.</li>
+        <li>Consultar historial administrativo y observaciones.</li>
+      </ul>
+    </section>
   </main>
 
   <script src="assets/js/config.js"></script>
